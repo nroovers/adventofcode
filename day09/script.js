@@ -44,6 +44,16 @@ function getIndexOfLastFileBlock() {
   return disk.findLastIndex((block) => block != ".");
 }
 
+function calculateChecksum() {
+  return disk
+    .map((value, index) => {
+      return value == "." ? 0 : value * index;
+    })
+    .reduce((total, value) => {
+      return total + value;
+    }, 0);
+}
+
 intiDisk();
 
 // console.log(disk);
@@ -52,12 +62,6 @@ sortDisk();
 
 // console.log(disk);
 
-var checksum = disk
-  .map((value, index) => {
-    return value == "." ? 0 : value * index;
-  })
-  .reduce((total, value) => {
-    return total + value;
-  }, 0);
+var checksum = calculateChecksum();
 
 console.log(checksum);
