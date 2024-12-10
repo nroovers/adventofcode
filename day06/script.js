@@ -3,7 +3,7 @@ var fs = require("fs");
 var field = fs
   .readFileSync("./input1.txt", { encoding: "utf8", flag: "r" })
   .split("\n")
-  .map((line) => line.split(""));
+  .map((line) => line.split("")); 
 
 var xMax = field[0].length;
 var yMax = field.length;
