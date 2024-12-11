@@ -2,7 +2,6 @@
 var input = "9694820 93 54276 1304 314 664481 0 4";
 
 var array = input.split(" ");
-var arrayLength = 0;
 
 var countCache = {};
 
@@ -30,8 +29,6 @@ function countStones(value, i) {
 function trimTrailingZero(str) {
   return parseInt(str).toString();
 }
-
-var repeat = 75;
 
 var start = Date.now();
 
